@@ -1,0 +1,163 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+	<groupId>com.jfinal</groupId>
+	<artifactId>jetty-server</artifactId>
+	<packaging>jar</packaging>
+	<name>jetty-server</name>
+	<version>8.1.8-SNAPSHOT</version>
+	<url>http://jfinal.googlecode.com</url>
+	<description>Jetty Server</description>
+	
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+	
+	<issueManagement>
+		<system>Github Issue</system>
+		<url>http://github.com/jfinal/jetty-server/issues</url>
+	</issueManagement>
+	<licenses>
+		<license>
+			<name>The Apache Software License, Version 2.0</name>
+			<url>http://apache.org/licenses/LICENSE-2.0.txt</url>
+		</license>
+	</licenses>
+	<developers>
+		<developer>
+			<id>jfinal</id>
+			<name>James</name>
+			<email>jfinal@126.com</email>
+			<url>http://weibo.com/jfinal</url>
+		</developer>
+	</developers>
+	<scm>
+		<connection>scm:git:git@github.com:jfinal/jetty-server.git</connection>
+		<developerConnection>scm:git:git@github.com:jfinal/jetty-server.git</developerConnection>
+		<url>git@github.com:jfinal/jetty-server.git</url>
+	</scm>
+	
+	<parent>
+		<groupId>org.sonatype.oss</groupId>
+		<artifactId>oss-parent</artifactId>
+		<version>7</version>
+	</parent>
+
+	<repositories>
+	</repositories>
+	
+  <build>
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+        <targetPath>org/eclipse/jetty/webapp</targetPath>
+        <includes>
+          <include>webdefault.xml</include>
+        </includes>
+      </resource>
+      <resource>
+        <directory>src/main/config/etc</directory>
+        <targetPath>org/eclipse/jetty/webapp</targetPath>
+        <filtering>false</filtering>
+        <includes>
+          <include>webdefault.xml</include>
+        </includes>
+      </resource>
+    </resources>
+    <plugins>
+      <!-- plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+            <configuration>
+              <descriptorRefs>
+                <descriptorRef>config</descriptorRef>
+              </descriptorRefs>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin -->
+      
+      <plugin>
+        <groupId>org.apache.felix</groupId>
+        <artifactId>maven-bundle-plugin</artifactId>
+        <extensions>true</extensions>
+        <executions>
+          <execution>
+            <goals>
+              <goal>manifest</goal>
+            </goals>
+            <configuration>
+              <instructions>
+                <Import-Package>javax.servlet.*;version="2.6.0",*</Import-Package>
+              </instructions>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <!--
+        Required for OSGI
+        -->
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <configuration>
+          <archive>
+            <manifestFile>
+              ${project.build.outputDirectory}/META-INF/MANIFEST.MF
+            </manifestFile>
+          </archive>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>findbugs-maven-plugin</artifactId>
+        <configuration>
+          <onlyAnalyze>org.eclipse.jetty.webapp.*</onlyAnalyze>
+        </configuration>
+      </plugin>
+      
+      <plugin>
+		<groupId>org.apache.maven.plugins</groupId>
+		<artifactId>maven-gpg-plugin</artifactId>
+		<executions>
+		  <execution>
+			<id>sign-artifacts</id>
+			<phase>verify</phase>
+			<goals>
+			  <goal>sign</goal>
+			</goals>
+		  </execution>
+		</executions>
+	</plugin>
+    </plugins>
+  </build>
+  <dependencies>
+    <dependency>
+      <groupId>org.eclipse.jetty</groupId>
+      <artifactId>jetty-xml</artifactId>
+      <version>8.1.8.v20121106</version>
+    </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>test</scope>
+      <version>4.8.2</version>
+    </dependency>
+    <dependency>
+      <groupId>org.eclipse.jetty</groupId>
+      <artifactId>jetty-servlet</artifactId>
+      <version>8.1.8.v20121106</version>
+    </dependency>
+    <dependency>
+      <groupId>org.eclipse.jetty</groupId>
+      <artifactId>jetty-jmx</artifactId>
+      <version>8.1.8.v20121106</version>
+      <optional>true</optional>
+    </dependency>
+  </dependencies>
+</project>

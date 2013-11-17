@@ -4,7 +4,7 @@
 	<artifactId>jetty-server</artifactId>
 	<packaging>jar</packaging>
 	<name>jetty-server</name>
-	<version>8.1.8-SNAPSHOT</version>
+	<version>8.1.8</version>
 	<url>http://jfinal.googlecode.com</url>
 	<description>Jetty Server</description>
 	

@@ -1,28 +1,5 @@
 Manifest-Version: 1.0
-Bnd-LastModified: 1384693431956
-Build-Jdk: 1.6.0_27
 Built-By: Zhanbo
-Bundle-Description: Jetty Server
-Bundle-License: http://apache.org/licenses/LICENSE-2.0.txt
-Bundle-ManifestVersion: 2
-Bundle-Name: jetty-server
-Bundle-SymbolicName: com.jfinal.jetty-server
-Bundle-Version: 8.1.8.SNAPSHOT
-Created-By: Apache Maven Bundle Plugin
-Export-Package: org.eclipse.jetty.webapp;version="8.1.8.SNAPSHOT";uses:=
- "javax.servlet,org.eclipse.jetty.security,org.eclipse.jetty.server,org.
- eclipse.jetty.server.handler,org.eclipse.jetty.server.session,org.eclip
- se.jetty.servlet,org.eclipse.jetty.util,org.eclipse.jetty.util.resource
- ,org.eclipse.jetty.xml"
-Import-Package: javax.servlet;version="2.6.0",javax.servlet.descriptor;v
- ersion="2.6.0",javax.servlet.http;version="2.6.0",org.eclipse.jetty.htt
- p;version="[8.1,9)",org.eclipse.jetty.io;version="[8.1,9)",org.eclipse.
- jetty.security;version="[8.1,9)",org.eclipse.jetty.server;version="[8.1
- ,9)",org.eclipse.jetty.server.handler;version="[8.1,9)",org.eclipse.jet
- ty.server.session;version="[8.1,9)",org.eclipse.jetty.servlet;version="
- [8.1,9)",org.eclipse.jetty.util;version="[8.1,9)",org.eclipse.jetty.uti
- l.log;version="[8.1,9)",org.eclipse.jetty.util.resource;version="[8.1,9
- )",org.eclipse.jetty.util.security;version="[8.1,9)",org.eclipse.jetty.
- xml;version="[8.1,9)"
-Originally-Created-By: Maven Integration for Eclipse
-Tool: Bnd-2.1.0.20130426-122213
+Build-Jdk: 1.6.0_27
+Created-By: Maven Integration for Eclipse
+

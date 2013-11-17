@@ -49,6 +49,10 @@
     <resources>
       <resource>
         <directory>src/main/resources</directory>
+        <targetPath>org/eclipse/jetty/webapp</targetPath>
+        <includes>
+          <include>webdefault.xml</include>
+        </includes>
       </resource>
       <resource>
         <directory>src/main/config/etc</directory>

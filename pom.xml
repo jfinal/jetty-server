@@ -1,8 +1,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <parent>
-    <groupId>org.eclipse.jetty</groupId>
-    <artifactId>jetty-project</artifactId>
-    <version>8.1.8.v20121106</version>
+    <groupId>com.jfinal</groupId>
+    <artifactId>jetty-server</artifactId>
+    <version>8.1.8</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
   <artifactId>jetty-webapp</artifactId>
@@ -87,7 +87,7 @@
     <dependency>
       <groupId>org.eclipse.jetty</groupId>
       <artifactId>jetty-xml</artifactId>
-      <version>${project.version}</version>
+      <version>8.1.8.v20121106</version>
     </dependency>
     <dependency>
       <groupId>junit</groupId>
@@ -97,12 +97,12 @@
     <dependency>
       <groupId>org.eclipse.jetty</groupId>
       <artifactId>jetty-servlet</artifactId>
-      <version>${project.version}</version>
+      <version>8.1.8.v20121106</version>
     </dependency>
     <dependency>
       <groupId>org.eclipse.jetty</groupId>
       <artifactId>jetty-jmx</artifactId>
-      <version>${project.version}</version>
+      <version>8.1.8.v20121106</version>
       <optional>true</optional>
     </dependency>
   </dependencies>

@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Built-By: Zhanbo
+Build-Jdk: 1.6.0_27
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Eclipse.org - Jetty
+Implementation-Version: 8.1.8.v20121106
+url: http://www.eclipse.org/jetty
+
